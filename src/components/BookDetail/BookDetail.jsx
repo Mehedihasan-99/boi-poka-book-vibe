@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToStoredReadList, addToWishList } from "../../utility/addToDb";
 
 const BookDetail = () => {
 
@@ -50,8 +51,8 @@ const BookDetail = () => {
                             </div>
                         </div>
                         <div className="space-x-2 px-5">
-                            <button className="btn bg-red-200">Read</button>
-                            <button className="btn bg-green-400">Wishlist</button>
+                            <button onClick={() => addToStoredReadList(currentId)} className="btn bg-red-200">Read</button>
+                            <button onClick={() => addToWishList(currentId)} className="btn bg-green-400">Wishlist</button>
                         </div>
                     </div>
                 </div>
